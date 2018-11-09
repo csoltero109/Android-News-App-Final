@@ -18,13 +18,13 @@ public class NetworkUtils {
     public static final String API_KEY = "5bf33d24a120418e9800d7cdbcdd9cdd";
 
     public static URL buildUrl() {
-        Uri builtUri = Uri.parse(BASE_URL).buildUpon()
+        Uri.Builder builtUri = Uri.parse(BASE_URL).buildUpon()
                 .appendPath("v1")
                 .appendPath("articles")
                 .appendQueryParameter(SOURCE, "the-next-web")
                 .appendQueryParameter(PARAM_SORT, "latest")
-                .appendQueryParameter(QUERY_PARAMETER, API_KEY)
-                .build();
+                .appendQueryParameter(QUERY_PARAMETER, API_KEY);
+
 
         URL url = null;
         try {
